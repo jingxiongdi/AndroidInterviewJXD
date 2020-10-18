@@ -17,8 +17,12 @@ public class NetworkUtils {
      */
     public static boolean isNetworkConnected(Context context){
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        Network network = connectivityManager.getActiveNetwork();
-        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+        Network network = null;
+        NetworkCapabilities networkCapabilities = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            network = connectivityManager.getActiveNetwork();
+            networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+        }
         return networkCapabilities!=null;
     }
 
@@ -29,8 +33,12 @@ public class NetworkUtils {
      */
     public static String getCurrentNetworkType(Context context){
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        Network network = connectivityManager.getActiveNetwork();
-        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+        Network network = null;
+        NetworkCapabilities networkCapabilities = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            network = connectivityManager.getActiveNetwork();
+            networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+        }
         if(networkCapabilities==null){
             return "no network";
         }else if(networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)){

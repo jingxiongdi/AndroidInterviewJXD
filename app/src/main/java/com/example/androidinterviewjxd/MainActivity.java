@@ -2,16 +2,19 @@ package com.example.androidinterviewjxd;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidinterviewjxd.activity.AActivity;
 import com.example.androidinterviewjxd.designmodel.LiShiReplaceActivity;
 import com.example.androidinterviewjxd.handler.TestHandlerActivity;
+import com.example.androidinterviewjxd.layout.ConstraintLayoutActivity;
 import com.example.androidinterviewjxd.protobuf.ProtoBufTestActivity;
 import com.example.androidinterviewjxd.thread.ControlThreadExecuteActivity;
 import com.example.androidinterviewjxd.utils.NetworkUtils;
@@ -39,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void requestNeedPermission() {
-        requestPermissions(permissionArr,REQUEST_PERMISSION_CODE);
+        //@RequiresApi仅仅只能让编译通过，并不能解决问题。
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissionArr,REQUEST_PERMISSION_CODE);
+        }
     }
 
     @Override
@@ -69,5 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void useProtobuf(View v){
         startActivity(new Intent(MainActivity.this, ProtoBufTestActivity.class));
+    }
+
+    public void useConstraintLayout(View v){
+        startActivity(new Intent(MainActivity.this, ConstraintLayoutActivity.class));
     }
 }
