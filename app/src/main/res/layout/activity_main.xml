@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="protobuf的使用"
+            android:onClick="useProtobuf"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onABActivityChange"
+            android:text="1.	假设有一个A界面，通过A在同一个栈里面启动了B界面，在B界面点击返回键，返回到A，此时从点击返回键开始，A和B分别经历了哪一些生命周期，按顺序说出来？" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="intoTestHandler"
+            android:text="2.	消息机制里面通过message.obtain去获取message的实例，为什么这么设计？"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewTest1"
+            android:text="容器A里面有BCD有三个子view，按照BCD依次去声明的，B在前面，C在中间，D在后面，手指按压下去，按压在A容器里面，正好落在B这个区域内，B消费了onActionDown事件，此时我从B开始手指开始移动，这个时候ActionMove和ActionDown，C还能收到么?为什么？"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="controlThread"
+            android:text="控制线程的执行顺序"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="六大设计原则"
+            android:onClick="designModel"
+            />
+    </LinearLayout>
+
+</ScrollView>
