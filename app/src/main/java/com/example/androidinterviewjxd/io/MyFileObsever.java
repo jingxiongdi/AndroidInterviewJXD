@@ -44,7 +44,7 @@ public class MyFileObsever extends FileObserver {
      */
     @Override
     public void onEvent(final int event, @Nullable String path) {
-        Log.d("FileObseverTest","event "+event);
+        Log.d("FileObseverTest","event "+event+" path: "+path);
         ((Activity) context).runOnUiThread(new Runnable() {
             @Override
             public void run() {

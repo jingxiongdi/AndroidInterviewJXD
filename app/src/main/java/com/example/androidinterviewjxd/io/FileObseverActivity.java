@@ -3,6 +3,7 @@ package com.example.androidinterviewjxd.io;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,7 +21,8 @@ public class FileObseverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_obsever);
-        file = new File(getExternalCacheDir().getAbsolutePath()+File.separator+"test.txt");
+        String filePath = Environment.getExternalStoragePublicDirectory("").toString()+"/text1.txt";
+        file = new File(filePath);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
             myFileObsever = new MyFileObsever(file,FileObseverActivity.this);
             myFileObsever.startWatching();
