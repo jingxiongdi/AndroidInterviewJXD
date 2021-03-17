@@ -14,6 +14,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="FileObsever的使用"
+            android:onClick="testFileObsever"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="ConstraintLayout的使用"
             android:onClick="useConstraintLayout"
             />

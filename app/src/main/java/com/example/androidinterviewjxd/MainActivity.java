@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.androidinterviewjxd.activity.AActivity;
 import com.example.androidinterviewjxd.designmodel.LiShiReplaceActivity;
 import com.example.androidinterviewjxd.handler.TestHandlerActivity;
+import com.example.androidinterviewjxd.io.FileObseverActivity;
 import com.example.androidinterviewjxd.layout.ConstraintLayoutActivity;
 import com.example.androidinterviewjxd.protobuf.ProtoBufTestActivity;
 import com.example.androidinterviewjxd.thread.ControlThreadExecuteActivity;
@@ -79,5 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void useConstraintLayout(View v){
         startActivity(new Intent(MainActivity.this, ConstraintLayoutActivity.class));
+    }
+
+    public void testFileObsever(View v){
+        startActivity(new Intent(MainActivity.this, FileObseverActivity.class));
     }
 }
