@@ -29,6 +29,7 @@ public class TestHandlerActivity extends AppCompatActivity {
     private volatile long sendHandlerObtainTime3 = 0;
     private volatile long sendMessageObtain1 = 0;
 
+
     private Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
